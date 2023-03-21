@@ -15,72 +15,40 @@ public class Biblioteca
     }
 
 }
-public class User 
+public class Utente
 {
-    string cognome;
-    string nome;
-    string email;
-    string password;
-    string telefono;
-
-    public User(string cognome, string nome, string email, string password, string telefono)
-    {
-        this.cognome = cognome;
-        this.nome = nome;
-        this.email = email;
-        this.password = password;
-        this.telefono = telefono;
-    }
-
+    string Cognome { get; set; } = "";
+    string Nome { get; set; } = "";
+    string Email { get; set; } = "";
+    string Password { get; set; } = "";
+    string RecapitoTelefonico { get; set; } = "";
 }
 
-public class Documento
+abstract class Documento
 {
-    string codiceIdentificativo;
-    string titolo;
-    int anno;
-    int scaffale;
-    string autore;
-
-    public Documento(string codiceIdentificativo, string titolo, int anno, int scaffale, string autore)
-    {
-        this.codiceIdentificativo = codiceIdentificativo;
-        this.titolo = titolo;
-        this.anno = anno;
-        this.scaffale = scaffale;
-        this.autore = autore;
-    }
+    string Codice { get; set; } = "";
+    string Titolo { get; set; } = "";
+    int Anno { get; set; }
+    string Settore { get; set; } = "";
+    int Scaffale { get; set; }
+    Autore? Autore { get; set; }
+    
 }
+
 
 class Libro : Documento
 {
-    int NumeroPagine;
-
-    public Libro(string codiceIdentificativo, string titolo, int anno, int scaffale, string autore, int NumeroPagine) : base(codiceIdentificativo, titolo, anno, scaffale, autore)
-    {
-        this.NumeroPagine = NumeroPagine;
-
-    }
+    int NumeroPagine { get; set; }
 }
 
 class DVD : Documento
 {
-    int Durata;
-    public DVD(string codiceIdentificativo, string titolo, int anno, int scaffale, string autore, int Durata) : base(codiceIdentificativo, titolo, anno, scaffale, autore)
-    {
-        this.Durata = Durata;
-
-    }
+    int Durata { get; set; }
 }
+
 
 class Autore
 {
-    string Nome;
-    string Cognome;
-
-    public Autore(string nome, string cognome)
-    {
-        Nome = nome;
-        Cognome = cognome;
-    }
+    string Nome { get; set; } = "";
+    string Cognome { get; set; } = "";
 }
