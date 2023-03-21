@@ -17,6 +17,21 @@ public class Biblioteca
         this.registrato = registrato;
     }
 
+    public List<Documento> CercaDocumento(string valoreRicerca)
+    {
+        List<Documento> risultati = new List<Documento>();
+
+        foreach (Documento documento in documenti)
+        {
+            if (documento.Codice.Contains(valoreRicerca) || documento.Titolo.Contains(valoreRicerca))
+            {
+                risultati.Add(documento);
+            }
+        }
+
+        return risultati;
+    }
+
 }
 public class Utente
 {
@@ -27,9 +42,9 @@ public class Utente
     string RecapitoTelefonico { get; set; } = "";
 }
 
-abstract class Documento
+public class Documento
 {
-    string Codice { get; set; } = "";
+    public string Codice { get; set; } = "";
     string Titolo { get; set; } = "";
     int Anno { get; set; }
     string Settore { get; set; } = "";
@@ -39,18 +54,18 @@ abstract class Documento
 }
 
 
-class Libro : Documento
+public class Libro : Documento
 {
     int NumeroPagine { get; set; }
 }
 
-class DVD : Documento
+public class DVD : Documento
 {
     int Durata { get; set; }
 }
 
 
-class Autore
+public class Autore
 {
     string Nome { get; set; } = "";
     string Cognome { get; set; } = "";
@@ -63,3 +78,4 @@ public class Prestito
     DateTime Dal { get; set; }
     DateTime Al { get; set; }
 }
+
