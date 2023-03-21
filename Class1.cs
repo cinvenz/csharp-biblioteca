@@ -17,20 +17,7 @@ public class Biblioteca
         this.registrato = registrato;
     }
 
-    public List<Documento> CercaDocumento(string valoreRicerca)
-    {
-        List<Documento> risultati = new List<Documento>();
-
-        foreach (Documento documento in documenti)
-        {
-            if (documento.Codice.Contains(valoreRicerca) || documento.Titolo.Contains(valoreRicerca))
-            {
-                risultati.Add(documento);
-            }
-        }
-
-        return risultati;
-    }
+   
 
 }
 public class Utente
