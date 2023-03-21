@@ -8,10 +8,13 @@ public class Biblioteca
 {
     bool registrato;
 
+    List<Documento> documenti = new List<Documento>();
+    List<Utente> utenti = new List<Utente>();
+    List<Prestito> prestiti = new List<Prestito>();
+
     public Biblioteca(bool registrato)
     {
         this.registrato = registrato;
- 
     }
 
 }
@@ -51,4 +54,12 @@ class Autore
 {
     string Nome { get; set; } = "";
     string Cognome { get; set; } = "";
+}
+
+public class Prestito
+{
+    Documento? Documento { get; set; }
+    Utente? Utente { get; set; }
+    DateTime Dal { get; set; }
+    DateTime Al { get; set; }
 }
